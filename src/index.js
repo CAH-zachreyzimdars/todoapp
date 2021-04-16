@@ -4,14 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const renderFunc = () => 
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
 
 
+  ReactDOM.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
 // import registerServiceWorker from './registerServiceWorker';
 // import { registerApplication, start } from 'single-spa';
 
@@ -26,19 +33,20 @@ ReactDOM.render(
 //   return System.import('test');
 // }
 
-// export function mount(props) {
-//   return Promise.resolve().then(() => {
-//     // Do framework UI rendering here
-//     console.log('mounted!');
-//   });
-// }
+export function mount(props) {
+  return Promise.resolve().then(() => {
+    // Do framework UI rendering here
+    renderFunc();
+    console.log('mounted!');
+  });
+}
 
-// export function unmount(props) {
-//   return Promise.resolve().then(() => {
-//     // Do framework UI unrendering here
-//     console.log('unmounted!');
-//   });
-// }
+export function unmount(props) {
+  return Promise.resolve().then(() => {
+    // Do framework UI unrendering here
+    console.log('unmounted!');
+  });
+}
 
 // start();
 // registerServiceWorker();
